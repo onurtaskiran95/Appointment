@@ -50,14 +50,11 @@ Ekledikten sonra sanal makinaya bağlanarak şu komutları çalıştırıyoruz;
 
 ------------------------------------------
 
-Ardından modülümüzde "migrations" klasöründeki .php uzantılı dosyayı kopyalayıyoruz ve portal dizininde "console/migrations/" altına yapıştırıyoruz(klasör yok ise kendimiz oluşturuyoruz).
-Ardından sanal makinamızda,
+Ardından sanal makinamızda aşağıdaki komutu çalıştırıyoruz böylelikle veritabanımızı oluşturmuş olacağız.
 
 ```
-            php yii migrate
+            php yii migrate--migrationPath=@vendor/kouosl/Appointment/migrations
 ```
-
-Komutunu çalıştırıyoruz böylelikle veritabanımızı oluşturup örnek bir kayıt ekliyoruz. 
 
 ------------------------------------------
 
