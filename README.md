@@ -50,7 +50,7 @@ Ekledikten sonra sanal makinaya bağlanarak şu komutları çalıştırıyoruz;
 
 ------------------------------------------
 
-Son adım olarakda modülümüzde "migrations" klasöründeki .php uzantılı dosyayı kopyalayıyoruz ve portal dizininde "console/migrations/" altına yapıştırıyoruz(klasör yok ise kendimiz oluşturuyoruz).
+Ardından modülümüzde "migrations" klasöründeki .php uzantılı dosyayı kopyalayıyoruz ve portal dizininde "console/migrations/" altına yapıştırıyoruz(klasör yok ise kendimiz oluşturuyoruz).
 Ardından sanal makinamızda,
 
 ```
@@ -59,6 +59,29 @@ Ardından sanal makinamızda,
 
 Komutunu çalıştırıyoruz böylelikle veritabanımızı oluşturup örnek bir kayıt ekliyoruz. 
 
+------------------------------------------
+
+Son adım olarak "common/config/main-local.php" dosyasına girerek mail gönderme ayarlarımızı yapıyoruz.
+
+```
+            'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'viewPath' => '@common/mail',
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.gmail.com',
+                'username' => 'onurtaskiran.randevu@gmail.com',
+                'password' => 'Onur1234',
+                'port' => '587',
+                'encryption' => 'tls',
+            ],
+            'useFileTransport' => false,
+        ]
+```
+
+Kodu bu şekilde değiştirmeniz gerekiyor.
+
+------------------------------------------
 
 
 **Modül kurulumu tamamlanmıştır.**
