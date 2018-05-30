@@ -21,6 +21,7 @@ Portal klasörünün içerisindeki composer.json dosyasında gerekli yerlere şu
 
 ```
             "repositories": [
+                        ...
                         {
                               "type": "vcs",
                               "url": "https://github.com/onurtaskiran95/Appointment.git"
