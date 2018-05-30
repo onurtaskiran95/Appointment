@@ -74,4 +74,3 @@ Onaylanan randevular kullanıcılara mail olarak gidecek. Eğer daha önceden on
 ------------------------------------------
 
                                                                                                             ##Onur Taşkıran - 141307031
-
