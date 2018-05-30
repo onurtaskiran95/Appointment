@@ -43,7 +43,7 @@ Ekledikten sonra sanal makinaya bağlanarak şu komutları çalıştırıyoruz;
 
 ```
             cd /var/www/portal
-            sudo chmod -R 777 vendor/kouosl/Randevu
+            sudo chmod -R 777 vendor/kouosl/Appointment
             composer require 2amigos/yii2-date-picker-widget:~1.0
             composer update
 ```
