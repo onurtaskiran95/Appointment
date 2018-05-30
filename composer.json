@@ -1,13 +1,13 @@
 {
     "name": "kouosl/Appointment",
-    "description": "Sample module for KOUOSL PORTAL",
+    "description": "Appoinment module for KOUOSL PORTAL",
     "type": "yii2-extension",
     "keywords": ["yii2", "yii 2", "Appointment", "module", "modules"],
     "license": "BSD-3-Clause",
     "authors": [
         {
-            "name": "Ekrem HATİPOĞLU",
-            "email": "ekrem.hatipoglu@outlook.com"
+            "name": "Onur Taşkıran",
+            "email": "onurtaskiran95@gmail.com"
         }
     ],
     "autoload": {
