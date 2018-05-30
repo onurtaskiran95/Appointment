@@ -1,12 +1,42 @@
-<?= $this->title = 'Modül çalışıyor.'; ?>
-<div class="site-index">
+<?php
 
-    <div class="jumbotron">
-        <h1>Kou Osl Yii2 App</h1>
+use yii\helpers\Html;
+use yii\grid\GridView;
+use yii\widgets\Pjax;
+/* @var $this yii\web\View */
+/* @var $searchModel kouosl\Appointment\models\AppointmentSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
 
-        <p class="lead">Örnek uygulamayı başarılı bir şekilde çalıştırdınız.</p>
+$this->title = 'Randevu Listesi';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="appointment-index">
 
-        <p><a class="btn btn-lg btn-success" href="#">Modüller ve konfürgasyon!</a></p>
-    </div>
+    <h1><?= Html::encode($this->title) ?></h1>
+    <?php Pjax::begin(); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
+    <p>
+        <?= Html::a('Randevu Ekle', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'appointment_date',
+            'appointment_name',
+            'appointment_email:email',
+            'appointment_text:ntext',
+            [
+                'attribute'=>'appointment_status',
+                'value'=>  'AppointmentStatus',
+            ],
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+    <?php Pjax::end(); ?>
 </div>
