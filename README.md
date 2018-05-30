@@ -11,28 +11,28 @@ Ardından "git clone https://github.com/onurtaskiran95/Appointment.git" komutunu
 Portal dizinindeki "\frontend\config\main.php" ve "\backend\config\main.php" dosyasına girerek şu satırları ekliyoruz;
 
 ```
-'Appointment' => [
-            'class' => 'kouosl\Appointment\Module'  
-        ]
+            'Appointment' => [
+                        'class' => 'kouosl\Appointment\Module'  
+                    ]
 ```  
 ------------------------------------------
 
 Portal klasörünün içerisindeki composer.json dosyasında gerekli yerlere şu satırları ekliyoruz;
 
 ```
-"repositories": [
-            {
-                  "type": "vcs",
-                  "url": "https://github.com/onurtaskiran95/Appointment.git"
-            }
-],
+            "repositories": [
+                        {
+                              "type": "vcs",
+                              "url": "https://github.com/onurtaskiran95/Appointment.git"
+                        }
+            ],
 
 
 
-"require": {
-            ...
-            "kouosl/Appointment": "dev-master"
-},
+            "require": {
+                        ...
+                        "kouosl/Appointment": "dev-master"
+            },
 ```
 
 
@@ -57,6 +57,7 @@ Ardından sanal makinamızda,
 ```
 
 Komutunu çalıştırıyoruz böylelikle veritabanımızı oluşturup örnek bir kayıt ekliyoruz. 
+
 
 
 **Modül kurulumu tamamlanmıştır.**
