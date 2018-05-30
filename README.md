@@ -3,28 +3,14 @@ PHP Module for KOUOSL
 
 Randevu modülünü eklemek için öncelikle,
 
-Komut satırında modülümüzü ekleyeceğimiz yere (@vendor/kouosl/) altına geliyoruz.
-Ardından "git clone https://github.com/onurtaskiran95/Appointment.git" komutunu çalıştırarak modülümüzü projemize indiriyoruz.
-
-------------------------------------------  
-
-Portal dizinindeki "\frontend\config\main.php" ve "\backend\config\main.php" dosyasına girerek şu satırları ekliyoruz;
-
-```
-            'Appointment' => [
-                        'class' => 'kouosl\Appointment\Module'  
-                    ]
-```  
-------------------------------------------
-
 Portal klasörünün içerisindeki composer.json dosyasında gerekli yerlere şu satırları ekliyoruz;
 
 ```
             "repositories": [
                         ...
                         {
-                              "type": "vcs",
-                              "url": "https://github.com/onurtaskiran95/Appointment.git"
+                            "type": "vcs",
+                            "url": "https://github.com/onurtaskiran95/Appointment.git"
                         }
             ],
 
@@ -32,10 +18,10 @@ Portal klasörünün içerisindeki composer.json dosyasında gerekli yerlere şu
 
             "require": {
                         ...
-                        "kouosl/Appointment": "dev-master"
+                        "kouosl/Appointment": "dev-master",
+                        "2amigos/yii2-date-picker-widget": "~1.0"
             },
 ```
-
 
 ------------------------------------------
 
@@ -43,8 +29,6 @@ Ekledikten sonra sanal makinaya bağlanarak şu komutları çalıştırıyoruz;
 
 ```
             cd /var/www/portal
-            sudo chmod -R 777 vendor/kouosl/Appointment
-            composer require 2amigos/yii2-date-picker-widget:~1.0
             composer update
 ```
 
@@ -58,7 +42,16 @@ Ardından sanal makinamızda aşağıdaki komutu çalıştırıyoruz böylelikle
 
 ------------------------------------------
 
-Son adım olarak "common/config/main-local.php" dosyasına girerek mail gönderme ayarlarımızı yapıyoruz.
+Portal dizinindeki "\frontend\config\main.php" ve "\backend\config\main.php" dosyasına girerek şu satırları ekliyoruz;
+
+```
+            'Appointment' => [
+                        'class' => 'kouosl\Appointment\Module'  
+                    ]
+```  
+------------------------------------------
+
+Son adım olarak "common/config/main-local.php" dosyasına girerek mail gönderme ile ilgili ayarlarımızı yapıyoruz.
 
 ```
             'mailer' => [
